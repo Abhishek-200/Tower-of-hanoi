@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+void tower(int ,char ,char,char);
+int main(){
+printf("ABHISHEK,\n");
+	int n;
+	printf("enter no, of disks");
+	scanf("%d",&n);
+	tower(n,'A','B','C');
+	return 0;
+}
+
+void tower(int n,char beg,char ux,char end){
+	if(n==1){
+		printf("move peg %c to peg %c\n",beg,end);
+		return;
+	}
+	
+	else{
+		tower(n-1,beg,end,ux);
+		printf("move peg %c to peg %c\n",beg,end);
+		tower(n-1,ux,beg,end);
+	}
+}
